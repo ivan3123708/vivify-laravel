@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 Route::get('/home', function() {
     return 'This is home route';
-});
+})->middleware('dummy');
