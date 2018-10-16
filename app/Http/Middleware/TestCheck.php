@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class DummyCheck
+class TestCheck
 {
     /**
      * Handle an incoming request.
@@ -15,8 +15,8 @@ class DummyCheck
      */
     public function handle($request, Closure $next)
     {
-        if (1 > 2) {
-            return redirect('/');
+        if (1 < 2) {
+            return app()->abort(401, 'Not authorized');
         }
 
         return $next($request);
