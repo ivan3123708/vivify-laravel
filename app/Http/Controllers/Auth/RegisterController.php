@@ -38,6 +38,18 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->countries = [
+            'Australia',
+            'China',
+            'France',
+            'Germany',
+            'Italy',
+            'Japan',
+            'Russia',
+            'Spain',
+            'United Kingdom',
+            'United States'
+        ];
     }
 
     /**
@@ -52,7 +64,7 @@ class RegisterController extends Controller
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'company' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
+            'country' => 'required|string|in:' . implode(',', $this->countries),
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
