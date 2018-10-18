@@ -1,0 +1,1 @@
+<div id="footer">Lorem Ipsum &copy; 2018</div>
