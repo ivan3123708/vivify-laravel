@@ -57,8 +57,20 @@
                             <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
 
                             <div class="col-md-6">
-                                <input id="country" type="text" class="form-control{{ $errors->has('country') ? ' is-invalid' : '' }}" name="country" value="{{ old('country') }}" required autofocus>
-
+                                <select id="country" class="form-control{{ $errors->has('country') ? ' is-invalid' : '' }}" name="country" required> 
+                                    <option value="" selected="selected">Select Country</option> 
+                                    <option value="Australia">Australia</option>
+                                    <option value="China">China</option>
+                                    <option value="France">France</option> 
+                                    <option value="Germany">Germany</option> 
+                                    <option value="Italy">Italy</option> 
+                                    <option value="Japan">Japan</option>
+                                    <option value="Russia">Russia</option> 
+                                    <option value="Spain">Spain</option> 
+                                    <option value="United Kingdom">United Kingdom</option> 
+                                    <option value="United States">United States</option> 
+                                </select>
+                                
                                 @if ($errors->has('country'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('country') }}</strong>
